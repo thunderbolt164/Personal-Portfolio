@@ -13,7 +13,7 @@ const handleProjectClick = (project) => {
     alert("🚧 This project is currently under development.");
   }
 };
-const ShowCaseSection = () => {
+const ShowcaseSection = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
 
@@ -92,4 +92,4 @@ const ShowCaseSection = () => {
   );
 };
 
-export default ShowCaseSection;
+export default ShowcaseSection;

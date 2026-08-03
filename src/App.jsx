@@ -1,6 +1,6 @@
   import React from 'react'
   import Hero from './sections/Hero'
-import ShowCaseSection from './sections/ShowCaseSection'
+import ShowcaseSection from "./sections/ShowcaseSection";
 import NavBar from './components/NavBar'
 import FeatureCard from './sections/FeatureCard'
 import ExperienceSection from './sections/ExperienceSection'
@@ -13,7 +13,7 @@ import Footer from './sections/Footer'
     <>
       <NavBar/>
       <Hero/>
-      <ShowCaseSection/>
+     <ShowcaseSection />
       <FeatureCard/>
       <ExperienceSection/>
       <TechStack/>
