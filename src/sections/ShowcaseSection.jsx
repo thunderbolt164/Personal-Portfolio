@@ -2,21 +2,25 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { projects } from "../constants";
+import TitleHeader from "../components/TitleHeader";
 gsap.registerPlugin(ScrollTrigger);
 
-const ShowCaseSection = () => {
+const handleProjectClick = (project) => {
+  if (project.liveLink) {
+    window.open(project.liveLink, "_blank", "noopener,noreferrer");
+  } else {
+    alert("🚧 This project is currently under development.");
+  }
+};
+const ShowcaseSection = () => {
   const sectionRef = useRef(null);
-  const project1Ref = useRef(null);
-  const project2Ref = useRef(null);
-  const project3Ref = useRef(null);
-  useGSAP(() => {
-    const projects = [
-      project1Ref.current,
-      project2Ref.current,
-      project3Ref.current,
-    ];
+  const cardsRef = useRef([]);
 
-    projects.forEach((card, index) => {
+  useGSAP(() => {
+    cardsRef.current.forEach((card, index) => {
+      if (!card) return;
+
       gsap.fromTo(
         card,
         {
@@ -27,7 +31,7 @@ const ShowCaseSection = () => {
           y: 0,
           opacity: 1,
           duration: 1,
-          delay: 0.3 * (index + 1),
+          delay: index * 0.3,
           scrollTrigger: {
             trigger: card,
             start: "top bottom-=100",
@@ -35,53 +39,52 @@ const ShowCaseSection = () => {
         },
       );
     });
-
-    gsap.fromTo(
-      project1Ref.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1.5 },
-    );
   }, []);
+
   return (
     <section id="work" ref={sectionRef} className="app-showcase">
       <div className="w-full">
-        <div className="showcaselayout">
-          {/* LEFT */}
+        <TitleHeader title="Featured Projects" sub="💻 Turning Ideas into Reality (Click on it to see)" />
 
-          <div className="first-project-wrapper" ref={project1Ref}>
-            <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Ryde" />
+        <div className="mt-20 showcaselayout">
+          {/* Featured Project */}
+          <div
+            className="first-project-wrapper"
+            ref={(el) => (cardsRef.current[0] = el)}
+          >
+            <div
+              className="image-wrapper cursor-pointer"
+              onClick={() => handleProjectClick(projects[0])}
+            >
+              <img src={projects[0].image} alt={projects[0].title} />
             </div>
+
             <div className="text-content">
-              <h2>
-                ON-Demand Rides Made Simple With a PowerFull , UserFriendly App
-                called Ride.
-              </h2>
-              <p className="text-white-50 md:text-xl ">
-                An app build with React Native , Expo, & TailwindCss for a fast,
-                user-friendly experiences.
+              <h2>{projects[0].title}</h2>
+              <p className="text-white-50 md:text-xl">
+                {projects[0].description}
               </p>
             </div>
           </div>
 
-          {/* RIGHT*/}
+          {/* Project List */}
           <div className="project-list-wrapper overflow-hidden">
-            <div className="project" ref={project2Ref}>
-              <div className="image-wrapper bg-[#ffefdb]">
-                <img
-                  src="/images/project1.png"
-                  alt="Library Management platform "
-                />
-              </div>
-              <h2> Library Management Platform </h2>
-            </div>
+            {projects.slice(1).map((project, index) => (
+              <div
+                key={project.title}
+                className="project"
+                ref={(el) => (cardsRef.current[index + 1] = el)}
+              >
+                <div
+                  className={`image-wrapper ${project.color} cursor-pointer`}
+                  onClick={() => handleProjectClick(project)}
+                >
+                  <img src={project.image} alt={project.title} />
+                </div>
 
-            <div className="project" ref={project3Ref}>
-              <div className="image-wrapper bg-[#ffe7eb]">
-                <img src="/images/project1.png" alt="Yc Directory " />
+                <h2>{project.title}</h2>
               </div>
-              <h2> Start up Show Case App </h2>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -89,4 +92,4 @@ const ShowCaseSection = () => {
   );
 };
 
-export default ShowCaseSection;
+export default ShowcaseSection;

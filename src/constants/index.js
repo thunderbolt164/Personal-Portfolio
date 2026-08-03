@@ -111,39 +111,42 @@ const techStackIcons = [
 
 const expCards = [
   {
-    review: "Through my GSSoC contributions, I combined technical expertise with collaborative development, delivering impactful features, improving application quality, and helping create a better experience for users and contributors alike",
+    review: "During my internship at Variable Soft, I contributed to a production CRM platform by building responsive interfaces, integrating REST APIs, and creating smooth user experiences with modern frontend technologies.",
     imgPath: "/images/exp1.png",
     logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+    title: "Full-Stack Developer Intern",
+    date: "Jan 2026 – Jun 2026",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Built reusable UI components using React and TypeScript.",
+      "Integrated REST APIs across multiple CRM modules.",
+      "Debugged, tested, and optimized application performance.",
+      "Collaborated using Git and GitHub in a team environment.",
     ],
   },
   {
-    review: "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+    review: "As a GSSoC 2026 contributor, I collaborated with maintainers worldwide, contributing features, bug fixes, and improvements while following professional open-source development workflows.",
     imgPath: "/images/exp2.png",
     logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    title: "Open Source Contributor",
+    date: "May 2026 – Present",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Implemented new features and resolved bugs in open-source projects.",
+      "Submitted pull requests and participated in code reviews.",
+      "Worked with Git and GitHub workflows in collaborative development.",
+      "Followed software engineering best practices while contributing.",
     ],
   },
   {
-    review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+    review: "Completed an intensive on-site AI & Machine Learning workshop at MNIT Jaipur, gaining hands-on experience with Python, machine learning concepts, and real-world datasets under the guidance of experienced faculty members.",
     imgPath: "/images/exp3.png",
     logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+    title: "AI & Machine Learning Trainee",
+    date: "May 2023 - Jun 2023",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Learned core Machine Learning and Artificial Intelligence concepts.",
+    "Built hands-on projects using Python and real-world datasets.",
+    "Explored data preprocessing, model training, and evaluation techniques.",
+    "Worked alongside mentors and faculty in an immersive on-site learning environment",
     ],
   },
 ];
@@ -188,6 +191,28 @@ const socialImgs = [
   },
 ];
 
+const projects = [
+  {
+    title: "Built the frontend for an AI-powered CRM using React, TypeScript, Tailwind CSS, and GSAP.",
+    image: "/images/project1.png",
+    color: "bg-[#d9ecff]",
+    liveLink: "https://vscrm.ai",
+
+  },
+  {
+    title: "Responsive landing page with smooth GSAP animations and modern UI.",
+    image: "/images/project2.png",
+    color: "bg-[#ffefdb]",
+    liveLink: "https://cocktail-navy-six.vercel.app/",
+  },
+  {
+    title: "Full-stack platform for comparing loan offers from banks and NBFCs.",
+    image: "/images/project3.png",
+    color: "bg-[#ffe7eb]",
+    liveLink: null, // Under Development
+  },
+];
+
 export {
   words,
   abilities,
@@ -198,4 +223,5 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  projects,
 };
