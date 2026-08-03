@@ -1,5 +1,5 @@
 import React from "react";
-import TechIcon from "../components/Models/TechLogos/TechIcon";
+import TechIcon from "../components/models/TechLogos/TechIcon";
 import { techStackIcons} from "../constants";
 import TitleHeader from "../components/TitleHeader";
 import { useGSAP } from "@gsap/react";
